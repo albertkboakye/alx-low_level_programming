@@ -2,18 +2,14 @@
 /**
  * main - main block
  * Description: prints all single digit numbers of base 10
- * starting from 0, followed by a new line.
- * Return: 0
+ * Return: always 0 (Success)
  */
 int main(void)
 {
-	int c = 0;
+	char ch = '0';
 
-	while (c < 10)
-	{
-		putchar(48 + c);
-		c++;
-	}
+	for (ch = '0'; ch <= '9'; ch++)
+	  putchar(ch);
 
 	putchar('\n');
 	return (0);

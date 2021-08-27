@@ -3,18 +3,18 @@
 /**
  * main - main entry
  * Description: Using putchar to display small alphabets 
- * Return: returns 0 when everything works fine
+ * Return: returns 0 when everything works
  */
 int main(void)
 {
-  char c = 'a';
+	char c = 'a';
 
-  while (c <= 'z')
-    {
-      putchar(c);
-      c++;
-    }
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
 
-  putchar('\n');
-  return (0);
+	putchar('\n');
+	return (0);
 }
