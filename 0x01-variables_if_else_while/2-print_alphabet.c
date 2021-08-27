@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - main entry
- * Description: Using putchar to display small alphabets 
- * Return: returns 0 when everything works
+ * main - entry point
+ * Description: Using putchar to display small alphabets
+ * Return: 0
  */
 int main(void)
 {
@@ -14,7 +14,6 @@ int main(void)
 		putchar(c);
 		c++;
 	}
-
 	putchar('\n');
 	return (0);
 }
