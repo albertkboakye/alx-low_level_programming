@@ -1,22 +1,18 @@
 #include "main.h"
+
 /**
- *main - Entry point
- *
- *Description: prints holberton on new line
- *
- *Return: return 0 (success)
- *
- */
+*main - function prints text as output
+*
+*Return:return 0
+*/
 int main(void)
 {
-	char c[10] = "_putchar";
-	int i;
-
-	for (i = 0; i < 10; i++)
-	{
-		_putchar(c[i]);
-	}
-
-	_putchar('\n');
-	return (0);
+char ch[10] = "_putchar";
+int i;
+for (i = 0; i < 8; i++)
+{
+_putchar(ch[i]);
+}
+_putchar(10);
+return (0);
 }
