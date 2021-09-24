@@ -1,43 +1,38 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stddef.h>
+
 /**
- * string_nconcat - concates two strings
+ * string_nconcat - concatenates 2 strings, takes the first n chars of s2
  * @s1: string 1
  * @s2: string 2
- * @n: amount of bytes
- * Return: pointer to allocated memory
+ * @n: amount of chars to be used from s2
+ *
+ * Return: pointer to the new string
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *strDup;
-	int i;
-	unsigned int j;
+	char *new_string;
+	int i = 0, j = 0, size_1 = strlen(s1), size_2;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	i = 0;
-
-	while (s1[i] != '\0')
-		i++;
-
-	strDup = malloc(sizeof(char) * (i + n + 1));
-
-	if (strDup == NULL)
+	n < (unsigned int) strlen(s2) ? (size_2 = n) : (size_2 = strlen(s2));
+	new_string = (char *) malloc(size_1 + size_2 + 1);
+	if (new_string != NULL)
+	{
+		for (; i < size_1; i++)
+		{
+			new_string[i] = s1[i];
+		}
+		for (; j < size_2; j++)
+		{
+			new_string[i + j] = s2[j];
+		}
+		new_string[i + j] = '\0';
+	}
+	else
+	{
 		return (NULL);
-	i = j = 0;
-	while (s1[i] != '\0')
-	{
-		strDup[i] = s1[i];
-		i++;
 	}
-	while (j < n && s2[j] != '\0')
-	{
-		strDup[i] = s2[j];
-		i++, j++;
-	}
-	strDup[i] = '\0';
-	return (strDup);
+
+	return (new_string);
 }
